@@ -12,11 +12,11 @@ NextDenovo read_cutoff = 200k seed_cutoff = 240000 genome_size = 3.1g
 #Flye
 Flye --nano-hq ont.fq -g 3.1g 
 #verkko
-meryl count compress k=21 memory=200 threads=6 output Pat-compress.k21mer.meryl P1.NGS.1.fq.gz  &
-meryl count compress k=21 memory=200 threads=6 output Mat-compress.k21mer.meryl M1.NGS.1.fq.gz  &
-meryl count compress k=21 memory=200 threads=6 output child-compress.k21mer.meryl F1.NGS.1.fq.gz
-hapmers.sh Mat-compress.k21mer.meryl/ Pat-compress.k21mer.meryl/ child_allcompress.k21.meryl/ &
-verkko -d trio-k21 --hifi hifi.css.read.fasta.gz --nano ontall.fasta --hap-kmers Mat-compress.k21mer.hapmer.meryl/ Pat-compress.k21mer.hapmer.meryl/  trio --threads 50 --local --local-memory 200 &
+meryl count compress k=31 memory=200 threads=6 output Pat-compress.k31mer.meryl P1.NGS.1.fq.gz  &
+meryl count compress k=31 memory=200 threads=6 output Mat-compress.k31mer.meryl M1.NGS.1.fq.gz  &
+meryl count compress k=13 memory=200 threads=6 output child-compress.k31mer.meryl F1.NGS.1.fq.gz
+hapmers.sh Mat-compress.k31mer.meryl/ Pat-compress.k31mer.meryl/ child_allcompress.k31.meryl/ &
+verkko -d trio-k31 --hifi hifi.css.read.fasta.gz --nano ontall.fasta --hap-kmers Mat-compress.k31mer.hapmer.meryl/ Pat-compress.k31mer.hapmer.meryl/  trio --threads 50 --local --local-memory 200 &
 
 #Alignment 
 # winnowmap
