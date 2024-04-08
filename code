@@ -48,9 +48,9 @@ jasmine.jar Main max_dist=500 min_seqid =0.3 spec_reads=3 –output_genotypes in
 #Completeness, phasing and base call accuracies
 #Merqury
 meryl greater-than 1 F.hifi.meryl output F.hifi.gt1.meryl
-meryl greater-than 1 F.illumina.meryl output F.illumina.gt1.meryl 
-meryl divide-round 3 F.illumina.gt1.meryl output F.illumina.gt1.divideRoun3.meryl 
-meryl union-max F.hifi.gt1.meryl F.illumina.gt1.divideRoun3.meryl output F.hybrid.meryl 
+meryl greater-than 1 F.NGS.meryl output F.NGS.gt1.meryl 
+meryl divide-round 3 F.NGS.gt1.meryl output F.NGS.gt1.divideRoun3.meryl 
+meryl union-max F.hifi.gt1.meryl F.NGS.gt1.divideRoun3.meryl output F.hybrid.meryl 
 sh $MERQURY/trio/hapmers.sh Mat.meryl Pat.meryl F.hybrid.meryl 
 merqury.sh /path/F-hybrid-gt1-illuDivide3/F.hybrid.meryl/ /path/F-hybrid-gt1-illuDivide3/M.hapmer.meryl /path/F-hybrid-gt1-illuDivide3/P.hapmer.meryl mat.fasta pat.fasta  hybird 
 
